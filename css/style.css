@@ -1,0 +1,82 @@
+/****** General ***********/
+* {
+    font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
+}
+
+/* * {
+   border: 1px solid red; 
+}  */
+
+:root {
+    --main-color: #0065FC;
+    --main-bg-color: #F2F2F2;
+    --filter-bg-color: #DEEBFF;
+}
+
+.fa-solid {
+    color: var(--main-color);
+}
+
+html {
+
+}
+
+body {
+ 
+}
+
+.main-container {
+  
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Le code ci-dessous correspond à la version responsive uniquement */
+
+/****** Media queries ***********/
+/* Medium devices (tablets, less/equal than 1024px) */
+@media (max-width: 1024px) {
+   
+   
+
+
+}
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+    /* ... */
+  
+   
+}
+
+/*Ajout d'un message d'erreur pour les écrans inférieurs à la largeur min garantie*/
+@media (max-width: 319px) {
+    main::before {
+      content: "Votre écran est trop petit pour un affichage optimal.";
+      display: block;
+      color: red;
+      background-color: gray;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%); /* Centre réellement le message */
+      z-index: 1000;
+    }
+} 
