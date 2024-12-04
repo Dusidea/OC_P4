@@ -1,6 +1,7 @@
 /****** General ***********/
 * {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: "Shrikhand", serif;
     box-sizing: border-box;
 }
 
@@ -9,13 +10,17 @@
 }  */
 
 :root {
-    --main-color: #0065FC;
-    --main-bg-color: #F2F2F2;
-    --filter-bg-color: #DEEBFF;
+    /* envisager de renommer les couleurs par usage, mais pour l'instant je ne vois pas les usages */
+    --button-purple :  #9356DC;
+    --light-green : #99E2D0;
+    --dark-green: #008766;
+    --light-blue: #89C8FA;
+    --dark-blue :  #003A68;
+
 }
 
 .fa-solid {
-    color: var(--main-color);
+    color : var(--button-purple);
 }
 
 html {
@@ -31,6 +36,10 @@ body {
     
 }
 
+.header {
+    display: flex;
+    
+}
 
 
 
