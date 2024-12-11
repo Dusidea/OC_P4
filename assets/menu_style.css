@@ -1,0 +1,288 @@
+/* Rappel BEM .bloc__element--modificateur (où modificateur est par exemple : is open) */
+
+/****** General ***********/
+
+
+/* * {
+   border: 1px solid red; 
+}  */
+
+:root {
+    /* envisager de renommer les couleurs par usage, mais pour l'instant je ne vois pas les usages */
+    --button-purple :  #9356DC;
+    --light-green : #99E2D0;
+    --dark-green: #008766;
+    --light-blue: #89C8FA;
+    --dark-blue :  #003A68;
+    --background-light : #F6F6F6;
+    --font-main : 'Roboto', sans-serif;
+    --font-secondary : "Shrikhand", serif;
+    --background-dark : #353535 ;
+}
+
+* {
+    font-family: var(--font-main);
+    box-sizing: border-box;
+}
+
+.fa-solid, .fa-regular {
+   /* nope */
+}
+
+a {
+    text-decoration: none;
+    color:black;
+}
+
+body {
+    margin: 0;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    
+}
+
+
+/******************** HEADER**********************/
+header {
+    display: flex;
+    flex-direction: row;
+}
+
+/* MODIFIEUR */
+/* .header-homepage {
+    display: flex;
+    flex-direction: column;
+} */
+
+.header__title-menupage{
+    font-size: 30px ;
+    font-weight: 400;
+    font-family: var(--font-secondary);
+    margin: 0;
+    margin-top : 14px;
+    margin-left: 42px;
+}
+
+nav {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 17px;
+    margin-left: 17px;
+}
+
+nav a {
+    display: flex;
+    max-width: 100%;
+}
+
+nav i {
+
+    width: 17px;
+    height: 16px;
+}
+
+.header__location {
+    background-color: #EAEAEA;
+}
+
+
+/******************** FRAMEANDFOOTER (wrapper)**********************/
+.frameandfooter {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    background-color: var(--background-light) ;
+}
+
+
+/******************** MAIN**********************/
+.main__frame{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-light) ;
+    gap: 40px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    margin-top: -55px;
+    padding-left: 17px;
+    padding-right: 17px;
+}
+
+/* MODIFIEUR */
+/* .main__frame-no_overlap{ */
+    /* début répétition à retirer en css */
+    /* display: flex;
+    flex-direction: column;
+    background-color: var(--background-light) ;
+    gap: 40px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    padding-left: 17px;
+    padding-right: 17px; */
+    /* fin répétition à retirer en css */
+    /* margin-top:0; */
+/* } */
+
+.main__frame__title {
+    display: flex;
+    align-items: center;
+}
+
+/* MODIFIEUR */
+/* .main__frame__title__name-home{
+    font-size: 24px;
+    font-weight: 700;
+} */
+
+.main__frame__title__name{
+    font-family: var(--font-secondary);
+    font-size: 28px;
+    font-weight: 400;
+    margin-right: 29px;
+}
+
+.main__frame__subtitle{
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.main__frame__title .fa-regular {
+    font-size: 22px;
+}
+
+.main__frame__section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.main__frame__section__title {
+    font-weight: 300;
+    font-size: 16px;
+    margin: 0;
+}
+
+.main__frame__section__title__line {
+    width: 40px;
+    border-bottom: 3px solid;
+    border-bottom-color: var(--light-green);
+}
+
+.main__frame__section__card {
+    display: flex;
+    padding: 15px;
+    gap: 5px;
+    background-color: white;
+    border-radius: 15.04px;
+    filter: drop-shadow(0px 4.01px 15.04px 0px #0000001A);
+    position: relative;
+}
+
+.main__frame__section__card__txt {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.main__frame__section__card__dish {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.main__frame__section__card__description {
+    margin: 0;
+    font-weight: 300;
+    font-size: 15.04px;
+}
+
+.main__frame__section__card__price {
+    font-weight: 700;
+    font-size: 15px;
+    position: absolute;
+    bottom: 15px;
+    right:15px;
+}
+
+.main__frame__order{
+    display: flex;
+    justify-content: center;
+}
+
+.main__frame__order__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    color: white;
+    background: linear-gradient(var(--button-purple), #FF79DA);
+    height: 50px;
+    width: 186px;
+    
+}
+
+/******************** FOOTER**********************/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    /* margin-top: 40px; */
+    background-color: var(--background-dark);
+    color: white;
+    padding: 22px 25px 22px 25px;
+    gap: 16px;
+}
+
+.footer__title {
+    font-family: var(--font-secondary);
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0;
+    /* bizarre on dirait qu'il pixelise */
+}
+
+.footer__section {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 500;
+    gap: 7px;
+}
+
+.footer__section__link {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    /* text-decoration: none; */
+}
+
+.footer__section__link .fa-solid {
+    width: 11px;
+    height: 13px;
+    margin-right: 11px;
+}
+
+/* Le code ci-dessous correspond à la version responsive uniquement => desktop*/
+
+/****** Media queries ***********/
+/* > Small devices (phones, less than 768px) */
+@media (min-width: 769px) {
+    /* ... */
+  
+   
+}
+
+/* Medium devices (tablets, less/equal than 1024px) */
+@media (max-width: 1024px) {
+ 
+}
+
+
+
