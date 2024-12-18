@@ -240,6 +240,8 @@ body {
     color: var(--button-purple);
 }
 
+
+
 .main__frame__fonctionnement__card__number{
     width: 24px ;
     height: 24px ;
@@ -271,10 +273,11 @@ body {
 }
 
 .main__frame__restaurants__list{
-    gap: 18px;
+    /* gap: 18px; */
     display: flex;
     flex-direction: column;
     max-width: 100%;
+    position: relative;
 }
 
 .main__frame__restaurants__card__new{
@@ -343,25 +346,69 @@ body {
 }
 
 .restaurant_like{
+    display: flex;
     font-size: 22px;
-    position: absolute;
-    top : 197px;
-    /* left: 293px; */
-    right: 40px;
-    /* position par rapport à la droite plus robuste en responsive (left place le coeur au milieu sur desktop) */
+    /* par rapport à la card quand l'élément est dans la carte */
+    /* position: absolute; 
+    top : 200px;
+    right: 40px; */
+
+    /* par rapport à l'emplacement de départ du like lui meme */
+    position: relative; 
+    top : -46px;
+    right: 25px;
+    justify-content: flex-end;
+
+    z-index: 1;
+    margin: 0;
+    padding: 0;
 }
+
 
 .restaurant_like-selected{
    /* background: linear-gradient(var(--button-purple), #FF79DA);  */
    /* -webkit-background-clip: text;
    -webkit-text-fill-color: transparent; */
+   display: flex;
    color: var(--button-purple);
    font-size: 22px;
-   position: absolute;
-   top : 197px;
-   right: 40px;
+   opacity: 0.5;
+   transition: opacity 250ms;
+   /* position: absolute;
+   top : 200px;
+   right: 40px; */
+
+   position: relative;
+   top : -81px;
+   right: 25px;
+   justify-content: flex-end; 
+   z-index: 2;
+   /* display: none; */
+   margin: 0;
+    padding: 0;
 }
 
+.main__frame__restaurants__like{
+    /* display: none; */
+    
+    position: relative;
+    top : -40px;
+    right: -300px;
+    margin: 0;
+    padding: 0;
+    z-index: 3;
+
+}
+
+.main__frame__restaurants__like:checked +.restaurant_like-selected {
+    opacity: 1;
+}
+
+
+
+
+
+/* Animation inverse ?? */
 
 
 /******************** FOOTER**********************/
