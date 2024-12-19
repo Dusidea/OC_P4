@@ -22,8 +22,6 @@
                     Paris, Belleville
                 </div>
             </header>
-
-
             <div class="frameandfooter">
                 <main class="main__frame-no_overlap">
                     <section class="main__frame__title">
@@ -33,7 +31,6 @@
                             Explorer nos restaurants
                         </a>                        
                     </section>
-                   
                     <section class="main__frame__fonctionnement">
                         <h2 class="main__frame__fonctionnement__title">Fonctionnement</h2>
                         <div class="main__frame__fonctionnement__wrapper">
@@ -57,6 +54,7 @@
                     <section class="main__frame__restaurants" id="restaurants-list">
                         <h2 class="main__frame__restaurants__title">Restaurants</h2>
                         <div class="main__frame__restaurants__list">                            
+                            <div class="main__frame__restaurants__list_wrapper">
                             <!-- Carte 1 début -->
                             <a class="main__frame__restaurants__card" href="menupage_palette.html">
                                 <p class="main__frame__restaurants__card__new">Nouveau</p>
@@ -66,7 +64,6 @@
                                 <div class="main__frame__restaurants__card__txt">   
                                     <h4 class="main__frame__restaurants__card__txt_name">La palette du goût</h4>
                                     <h5 class="main__frame__restaurants__card__txt_location">Ménilmontant</h5>
-                                    
                                 </div>
                             </a>
                             <div class="main__frame__restaurants__list_like">
@@ -74,8 +71,8 @@
                                 <input type="checkbox" class="main__frame__restaurants__like">
                                 <i class="fa-solid fa-heart restaurant_like-selected"></i> 
                             </div>
-                                             
-                            
+                            </div>                 
+                            <div class="main__frame__restaurants__list_wrapper">
                             <!-- Carte 1 fin -->
                             <!-- Carte 2 début -->
                             <a class="main__frame__restaurants__card" href="menupage_note.html">
@@ -94,8 +91,10 @@
                                 <input type="checkbox" class="main__frame__restaurants__like">
                                 <i class="fa-solid fa-heart restaurant_like-selected"></i> 
                             </div>
+                             </div>
                             <!-- Carte 2 fin -->
                             <!-- Carte 3 début -->
+                            <div class="main__frame__restaurants__list_wrapper">
                             <!-- <a class="main__frame__restaurants__card__new">Nouveau</a>    -->
                             <a class="main__frame__restaurants__card" href="menupage_alafrancaise.html">
                                 <img class="main__frame__restaurants__card__img" 
@@ -112,8 +111,10 @@
                                 <input type="checkbox" class="main__frame__restaurants__like">
                                 <i class="fa-solid fa-heart restaurant_like-selected"></i> 
                             </div>
+                            </div>
                             <!-- Carte 3 fin -->
                              <!-- Carte 4 début -->
+                             <div class="main__frame__restaurants__list_wrapper">
                             <!-- <a class="main__frame__restaurants__card__new">Nouveau</a>    -->
                             <a class="main__frame__restaurants__card" href="menupage_delice.html">
                                 <img class="main__frame__restaurants__card__img" 
@@ -129,23 +130,23 @@
                                 <input type="checkbox" class="main__frame__restaurants__like">
                                 <i class="fa-solid fa-heart restaurant_like-selected"></i> 
                             </div>
+                            </div>
                             <!-- Carte 4 fin -->
                         </div>
                     </section>
-                    
-        
                 </main>
                 <footer>
                     <h4 class="footer__title">ohmyfood</h4>
                     <div class="footer__section">
-                        <a class="footer__section__link" href="#">
-                            <i class="fa-solid fa-utensils"></i> Proposer un restaurant
+                       <a class="footer__section__link" href="#">
+                            <i class="fa-solid fa-utensils footer__section__link_icon"></i>Proposer un restaurant
                         </a>
                         <a class="footer__section__link" href="#">
-                            <i class="fa-solid fa-handshake-angle"></i> Devenir partenaire
+                            <i class="fa-solid fa-handshake-angle footer__section__link_icon"></i>
+                            Devenir partenaire
                         </a>
-                        <a class="footer__section__link" href="#">Mentions légales</a>
-                        <a class="footer__section__link" href="#">Contact</a>
+                        <a class="footer__section__link-light" href="#">Mentions légales</a>
+                        <a class="footer__section__link-light" href="#">Contact</a>
                     </div>
                 </footer>
             </div>

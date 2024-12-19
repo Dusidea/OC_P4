@@ -444,19 +444,30 @@ footer {
     font-size: 16px;
     font-weight: 500;
     gap: 7px;
+
 }
 
 .footer__section__link {
     color: white;
     font-size: 16px;
     font-weight: 500;
-    /* text-decoration: none; */
+    display: flex;
+    align-items: center;
+  
 }
 
-.footer__section__link .fa-solid {
-    width: 11px;
-    height: 13px;
-    margin-right: 11px;
+.footer__section__link-light{
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+
+.footer__section__link_icon{
+    font-size: 13px;
+    padding-right: 11px;
+   
 }
 
 /* Le code ci-dessous correspond à la version responsive uniquement => desktop*/
@@ -487,6 +498,90 @@ footer {
         padding : 28px;
         flex: 1;
     }
+
+    .main__frame__restaurants{
+        padding-right: 180px;
+        padding-left: 180px;
+        gap: 28px;
+    }
+
+    .main__frame__restaurants__title{
+        height: auto;
+    }
+
+    .main__frame__restaurants__list{
+        gap: 50px;
+        flex-direction: row;
+        max-width: 100%;
+        position: relative;
+        /* flex: 1 1 calc(50% - 100px); */
+        display: flex;
+        flex-wrap: wrap;
+    
+    }
+
+    .main__frame__restaurants__list_wrapper{
+        display: flex;
+        flex: 1 1 calc(50% - 122px);
+    }
+
+    .main__frame__restaurants__card{
+        flex: 1 1 calc(50% - 122px);
+        position: relative;
+        /* width: 300px; */
+    }
+
+    .main__frame__restaurants__list_like{
+        margin: 0;
+        padding: 0;
+    }
+
+    .restaurant_like{
+        position: absolute;
+        top : 200px;
+        right:35px;
+    }
+    
+    
+    .restaurant_like-selected{
+        position: absolute;
+        top : 200px;
+        right:35px;
+    }
+    
+    .main__frame__restaurants__like{
+        /* position: absolute; */
+        position: absolute;
+        top : 200px;
+        right:35px;
+     
+    }
+
+    footer{
+        flex-direction: row-reverse;
+        padding: 30px 25px 30px 25px;    
+    }
+
+    .footer__section{
+        flex-direction: row;       
+    }
+
+    .footer__section_first {
+        flex-direction: row;       
+    }
+
+    .footer__section__link { 
+        width: 190px;
+    }
+
+    .footer__section__link-light{
+        width: 130px;
+    }
+
+ 
+/* le flex 1 ne semble pas avoir d'influence, 
+idem pour le gap 7
+pourtant en display flex (au sein de footer section) */
 
 }
 
