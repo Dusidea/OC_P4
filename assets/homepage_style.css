@@ -540,10 +540,11 @@ footer {
 /* Le code ci-dessous correspond à la version responsive uniquement => desktop*/
 
 /****** Media queries ***********/
-/* > Small devices (phones, less than 768px) */
-@media (min-width: 769px) {
+/* > Medium (tablets) */
+@media (min-width:530px) and  (max-width: 1024px) {
     /* ... */
-  
+   /* ici peut être limiter la largeur pour mettre des bordures comme sur large desktop sur P3 
+   (attention au loader qui prend "toute la largeur") */
    
 }
 
