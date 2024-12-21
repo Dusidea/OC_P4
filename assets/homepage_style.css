@@ -366,6 +366,13 @@ body {
     position: relative;
 }
 
+main__frame__restaurants__list_wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* flex-direction: co; */
+}
+
 .main__frame__restaurants__card__new{
     font-size: 14px;
     font-weight: 500;
@@ -413,11 +420,10 @@ body {
 .main__frame__restaurants__card__txt{
     padding-left: 13px;
     padding-right: 13px;  
-    /* padding-top: 190px;   */
     margin-top: 190px;
     display: flex;
     flex-direction: column;
-   /* margin-bottom: 10px; */
+
 }
 
 .main__frame__restaurants__card__txt_name{
@@ -441,7 +447,7 @@ body {
     display: flex;
     font-size: 22px;
     position: absolute; 
-    top : -65px;
+    top : -45px;
     right: 25px;
     z-index: 1;
     margin: 0;

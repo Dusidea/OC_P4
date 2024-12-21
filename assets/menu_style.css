@@ -25,9 +25,9 @@
     box-sizing: border-box;
 }
 
-.fa-solid, .fa-regular {
-   /* nope */
-}
+/* .fa-solid, .fa-regular {
+   
+} */
 
 a {
     text-decoration: none;
@@ -35,6 +35,10 @@ a {
 }
 
 body {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5 {
     margin: 0;
 }
 .main-container {
@@ -49,6 +53,9 @@ body {
 header {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 /* MODIFIEUR */
@@ -62,33 +69,42 @@ header {
     font-weight: 400;
     font-family: var(--font-secondary);
     margin: 0;
-    margin-top : 14px;
-    margin-left: 42px;
+    /* margin-top : 14px; */
+    /* margin-left: 42px; */
 }
+
 
 nav {
     width: 30px;
     height: 30px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-top: 17px;
-    margin-left: 17px;
+    justify-content: center;
+    position: absolute;
+    left : 42px;
+    font-size: 20px;
 }
 
 nav a {
-    display: flex;
-    max-width: 100%;
+    /* display: flex; */
+    /* max-width: 100%; */
+  
 }
 
-nav i {
+/* nav i {
 
     width: 17px;
     height: 16px;
-}
+} */
 
 .header__location {
     background-color: #EAEAEA;
+}
+
+.main-container__image{
+    height: 275px;
+    object-fit: cover;
+    width: 100%;
 }
 
 
@@ -98,6 +114,9 @@ nav i {
     flex-direction: column;
     gap: 40px;
     background-color: var(--background-light) ;
+
+    max-width: 100%;  
+
 }
 
 
@@ -112,7 +131,12 @@ nav i {
     margin-top: -55px;
     padding-left: 17px;
     padding-right: 17px;
+    padding-top: 31px;
+    
 }
+
+
+
 
 /* MODIFIEUR */
 /* .main__frame-no_overlap{ */
@@ -132,6 +156,7 @@ nav i {
 .main__frame__title {
     display: flex;
     align-items: center;
+   
 }
 
 /* MODIFIEUR */
@@ -140,7 +165,7 @@ nav i {
     font-weight: 700;
 } */
 
-.main__frame__title__name{
+.main__frame__title__name--menu{
     font-family: var(--font-secondary);
     font-size: 28px;
     font-weight: 400;
@@ -152,8 +177,11 @@ nav i {
     font-weight: 300;
 }
 
-.main__frame__title .fa-regular {
+.main__frame__title .fa-heart {
     font-size: 22px;
+    /* position:   absolute;
+    right: 37px; */
+    /* padding-left: 10px; */
 }
 
 .main__frame__section {
@@ -166,6 +194,7 @@ nav i {
     font-weight: 300;
     font-size: 16px;
     margin: 0;
+    position: relative;
 }
 
 .main__frame__section__title__line {
@@ -180,14 +209,27 @@ nav i {
     gap: 5px;
     background-color: white;
     border-radius: 15.04px;
-    filter: drop-shadow(0px 4.01px 15.04px 0px #0000001A);
+    box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1);
     position: relative;
+    justify-content: space-between;
+    /* animation : appear 3000ms ease-in-out; */
+
+    /* for {}
+
+    } */
+
 }
+
+
 
 .main__frame__section__card__txt {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    text-overflow: ellipsis;
+    /* text-wrap: nowrap; */
+
+
 }
 
 .main__frame__section__card__dish {
@@ -205,10 +247,70 @@ nav i {
 .main__frame__section__card__price {
     font-weight: 700;
     font-size: 15px;
-    position: absolute;
-    bottom: 15px;
-    right:15px;
+    display: flex;
+    /* align-items: center; */
+    align-items: flex-end;
+    justify-content: space-between;
+    text-wrap: nowrap;
+   
 }
+
+/* Div de la coche animée lors du survol (ou sélection) du plat */
+.main__frame__section__card-selected {
+    display: flex;
+    background-color: var(--light-green);
+    height: 100%;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    position: absolute;
+    padding: 20px;
+    /* permet de positionner le bloc animé à droite de la carte en dépit du display de la div */
+    right: 0px;
+    top: 0px;
+    /* rend le bloc invisible hors animation */
+    opacity: 0;
+    /* modifie le point d'ancrage pour l'animation (agrandissement) parte de la droite vers la gauche */
+    transform-origin: 100% 50%;
+
+    transform: scaleX(0); /* Taille initiale */
+            /********* version transition*********/
+            /* transition: transform 0.5s ease;  */
+}
+
+/* icone check au sein de la div sélection du plat */
+.dishcheck{
+    font-size: 20px;
+    /* font-weight: 1000; */
+    /* font-weight: bold; */
+    color:  white; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.main__frame__section__card:hover .main__frame__section__card__price {
+    /* permet de le décalage du texte de la card, surtout le prix ,lors du survol */
+    animation :  slide-price 500ms ease-in-out both;
+}
+
+
+.main__frame__section__card:hover .main__frame__section__card-selected{
+     animation: grow 500ms ease-in-out both  ;
+     /* nom - durée - timing  - fillmode(prolongation avant apres) */
+            /********* version transition*********/
+            /* transform: scale(1);
+            opacity: 1;  */ 
+    }
+
+/* .main__frame__section__card:not(:hover) .main__frame__section__card-selected{
+    animation: grow 500ms ease-in-out both;
+    animation-direction: reverse;
+} */
 
 .main__frame__order{
     display: flex;
@@ -225,6 +327,45 @@ nav i {
     height: 50px;
     width: 186px;
     
+}
+
+@keyframes appear {
+    from{
+        transform: translateX(-600px);
+        opacity: 0%;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 100%;
+    }
+}
+
+/* @keyframes slide {
+    from{
+        transform: translateX(0);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(-50px);
+        opacity: 1;  
+    }
+} */
+
+@keyframes slide-price {
+    to {
+        transform: translate(-60px);
+    }
+}
+
+@keyframes grow {
+    from{
+        transform: scaleX(0);
+        opacity: 0;
+    }
+    to{
+        transform: scaleX(1);
+        opacity: 1;  
+    }
 }
 
 /******************** FOOTER**********************/
@@ -280,8 +421,55 @@ footer {
 }
 
 /* Medium devices (tablets, less/equal than 1024px) */
-@media (max-width: 1024px) {
- 
+@media (min-width: 1024px) {
+
+    .frameandfooter {
+        /* justify-content: center; */
+        align-items: center;
+        background-color: white;
+        gap : 0;
+    }
+
+    .main-container__image{
+        height: 383px;      
+    }
+
+    .main__frame{
+        margin-top: -40px;
+        width: 1055px;
+        height: 1255px;
+       align-items: center;
+       padding-left: 200px;
+       padding-right: 200px;
+    }
+
+    .main__frame__section {
+        width: 100%;
+    }
+
+    footer{
+        flex-direction: row-reverse;
+        padding: 30px 25px 30px 25px;    
+    }
+
+    .footer__section{
+        flex-direction: row;       
+    }
+
+    .footer__section_first {
+        flex-direction: row;       
+    }
+
+    .footer__section__link { 
+        width: 190px;
+    }
+
+    .footer__section__link-light{
+        width: 130px;
+    }
+
+
+   
 }
 
 
