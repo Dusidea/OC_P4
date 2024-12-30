@@ -653,9 +653,6 @@ footer {
     }
 
  
-/* le flex 1 ne semble pas avoir d'influence, 
-idem pour le gap 7
-pourtant en display flex (au sein de footer section) */
 
 }
 
