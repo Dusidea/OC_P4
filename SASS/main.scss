@@ -1,0 +1,12 @@
+@use "./Base/reset";
+@use "./Base/typography";
+
+@use "./Utils/variables";
+@use "./Utils/mixins";
+
+@use "./Utils/maps";
+
+@use "./Components/header.scss";
+@use "./Components/footer";
+
+@use "./Layouts/homepage_style.scss";

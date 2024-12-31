@@ -1,0 +1,573 @@
+@charset "UTF-8";
+a {
+  text-decoration: none;
+  color: black;
+}
+
+body {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+:root {
+  --font-main: "Roboto", sans-serif;
+  --font-secondary: "Shrikhand", serif;
+}
+
+* {
+  font-family: var(--font-main);
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+header .header-homepage {
+  flex-direction: column;
+  z-index: 2;
+}
+header__title-menupage {
+  font-size: 30px;
+  font-weight: 400;
+  font-family: var(--font-secondary);
+  margin: 0;
+}
+header__title-menupage__title-homepage {
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+header__location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 17px;
+  height: 50px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #EAEAEA;
+  /* filter: drop-shadow(0px 4px 4px 0px rgba(0, 0, 0, 0.25)); */
+  box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.2509803922), 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922); /* Ombre en dessous */
+}
+
+nav {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 42px;
+  font-size: 20px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  /* margin-top: 40px; */
+  background-color: var(--background-dark);
+  color: white;
+  padding: 22px 25px 22px 25px;
+  gap: 16px;
+}
+
+.footer__title {
+  font-family: var(--font-secondary);
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+  margin: 0;
+  /* bizarre on dirait qu'il pixelise */
+}
+
+.footer__section {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 500;
+  gap: 7px;
+}
+
+.footer__section__link {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.footer__section__link-light {
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+}
+
+.footer__section__link_icon {
+  font-size: 13px;
+  padding-right: 11px;
+}
+
+/* Rappel BEM .bloc__element--modificateur (où modificateur est par exemple : is open) */
+/****** General ***********/
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/******************** FRAMEANDFOOTER (wrapper)**********************/
+.frameandfooter {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: var(--background-light);
+  z-index: 1;
+  max-width: 100%;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeout 4000ms ease forwards;
+  opacity: 0;
+  visibility: visible;
+}
+.loader__icon {
+  color: var(--button-purple);
+  font-size: 50px;
+  animation: spin 1s linear infinite;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Loader classique cercle */
+/* .loader::after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ccc;
+    border-top-color: var(--button-purple);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+} */
+/* Loader icone restaurant kekw */
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+    /* transform: scale(1); */
+    visibility: visible;
+  }
+  50% {
+    opacity: 0.5;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/******************** MAIN**********************/
+/* MODIFIEUR */
+.main__frame-no_overlap {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-light);
+  gap: 40px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  max-width: 100%;
+}
+.main__frame-no_overlap__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-wrap: wrap;
+  margin-top: 39px;
+  flex-wrap: wrap;
+}
+.main__frame-no_overlap__title__name {
+  font-size: 24px;
+  font-weight: 700;
+  text-wrap: wrap;
+  text-align: center;
+  display: flex;
+  padding-left: 42px;
+  padding-right: 42px;
+  height: auto;
+}
+.main__frame-no_overlap__subtitle {
+  display: flex;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 300;
+  text-wrap: wrap;
+  text-align: center;
+}
+.main__frame-no_overlap__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  color: white;
+  background: var(--button-gradient);
+  height: 50px;
+  margin-top: 27px;
+  padding-left: 19px;
+  padding-right: 19px;
+  /* différence entre les deux boutons : 
+  j'avais une width sur le bouton commander, 
+  que j'enleve pour mettre un padding. Peut etre le padding peut s'appliquer aux deux boutons => le padding serait différent
+  */
+  z-index: 1;
+  position: relative;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
+}
+.main__frame-no_overlap__button__button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  z-index: -1;
+  opacity: 0;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
+  transition: opacity 250ms ease-in-out, box-shadow 250ms ease-in-out;
+  border-radius: 25px;
+}
+.main__frame-no_overlap__button:hover::after {
+  opacity: 0.3;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5333333333);
+}
+
+/* MODIFIEUR */
+.main__frame__fonctionnement {
+  background-color: white;
+  padding: 48px 20px 48px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 100%;
+}
+
+.main__frame__fonctionnement__title {
+  font-size: 24px;
+  font-weight: 700;
+  /* text-align: center; */
+  display: flex;
+  /* margin-top: 48px; */
+  /* mutualisable avec main frame title => font size et weight. Le faire au niveau du h2 ? */
+}
+
+.main__frame__fonctionnement__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.main__frame__fonctionnement__card {
+  border-radius: 20px;
+  background-color: var(--background-light);
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1490196078);
+  padding-top: 28px;
+  padding-bottom: 28px;
+  position: relative;
+}
+
+.main__frame__fonctionnement__card__icon {
+  /* position: absolute;
+  left: 34px; */
+  color: #7E7E7E;
+  padding-right: 27px;
+}
+
+.main__frame__fonctionnement__card__icon-colored {
+  /* position: absolute;
+  left: 34px; */
+  color: var(--button-purple);
+  padding-right: 27px;
+}
+
+.main__frame__fonctionnement__label {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.main__frame__fonctionnement__card__number {
+  width: 24px;
+  height: 24px;
+  border-radius: 35px;
+  border: 1px solid var(--button-purple);
+  background-color: var(--button-purple);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  left: -10px;
+}
+
+/******************* Section des restaurants ***********************/
+.main__frame__restaurants {
+  padding-left: 17px;
+  padding-right: 17px;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.main__frame__restaurants__title {
+  margin-left: 3px;
+  height: 68px;
+}
+
+.main__frame__restaurants__list {
+  gap: 18px;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  position: relative;
+}
+
+.main__frame__restaurants__list__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main__frame__restaurants__card__new {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark-green);
+  background-color: var(--light-green);
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  height: 29px;
+  width: 80px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.main__frame__restaurants__card {
+  background-color: white;
+  border-radius: 15px;
+  height: 251px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  /* margin-top: -5px; */
+}
+
+.main__frame__restaurants__card__img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  /* width: 146px; */
+  width: 100%;
+  height: 231px;
+  top: -57px;
+  position: absolute;
+  z-index: 3;
+  object-fit: cover;
+  max-width: 100%;
+}
+
+.main__frame__restaurants__card__txt {
+  padding-left: 13px;
+  padding-right: 13px;
+  margin-top: 190px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main__frame__restaurants__card__txt_name {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.main__frame__restaurants__card__txt_location {
+  font-size: 17px;
+  font-weight: 300;
+  margin-top: 5px;
+}
+
+.main__frame__restaurants__list_like {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.restaurant_like {
+  display: flex;
+  font-size: 22px;
+  position: absolute;
+  top: -45px;
+  right: 25px;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.restaurant_like-selected {
+  display: flex;
+  color: var(--button-purple);
+  font-size: 22px;
+  opacity: 0;
+  transition: opacity 400ms ease-in-out;
+  position: absolute;
+  top: -65px;
+  right: 25px;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+}
+
+.main__frame__restaurants__like {
+  position: absolute;
+  top: -65px;
+  right: 25px;
+  margin: 0;
+  padding: 0;
+  z-index: 3;
+  opacity: 0;
+  width: 22px;
+  height: 22px;
+}
+
+.main__frame__restaurants__like:checked + .restaurant_like-selected {
+  opacity: 1;
+}
+
+/* Le code ci-dessous correspond à la version responsive uniquement => desktop*/
+/****** Media queries ***********/
+/* > Medium (tablets) */
+@media (min-width: 530px) and (max-width: 1024px) {
+  /* ... */
+  /* ici peut être limiter la largeur pour mettre des bordures comme sur large desktop sur P3 
+  (attention au loader qui prend "toute la largeur") */
+}
+/* Desktop */
+@media (min-width: 1024px) {
+  .main__frame__fonctionnement {
+    padding: 50px 180px 50px 180px;
+  }
+  .main__frame__fonctionnement__wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .main__frame__fonctionnement__card {
+    padding: 28px;
+    flex: 1;
+  }
+  .main__frame__restaurants {
+    padding-right: 180px;
+    padding-left: 180px;
+    gap: 28px;
+  }
+  .main__frame__restaurants__title {
+    height: auto;
+  }
+  .main__frame__restaurants__list {
+    gap: 50px;
+    flex-direction: row;
+    max-width: 100%;
+    position: relative;
+    /* flex: 1 1 calc(50% - 100px); */
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .main__frame__restaurants__list_wrapper {
+    display: flex;
+    flex: 1 1 calc(50% - 122px);
+  }
+  .main__frame__restaurants__card {
+    flex: 1 1 calc(50% - 122px);
+    position: relative;
+    /* width: 300px; */
+  }
+  .main__frame__restaurants__list_like {
+    margin: 0;
+    padding: 0;
+  }
+  .restaurant_like {
+    position: absolute;
+    top: 200px;
+    right: 35px;
+  }
+  .restaurant_like-selected {
+    position: absolute;
+    top: 200px;
+    right: 35px;
+  }
+  .main__frame__restaurants__like {
+    /* position: absolute; */
+    position: absolute;
+    top: 200px;
+    right: 35px;
+  }
+  footer {
+    flex-direction: row-reverse;
+    padding: 30px 25px 30px 25px;
+  }
+  .footer__section {
+    flex-direction: row;
+  }
+  .footer__section_first {
+    flex-direction: row;
+  }
+  .footer__section__link {
+    width: 190px;
+  }
+  .footer__section__link-light {
+    width: 130px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
