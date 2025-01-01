@@ -1,15 +1,18 @@
+
+@use '../Utils/variables' as var;
+
 footer {
     display: flex;
     flex-direction: column;
     /* margin-top: 40px; */
-    background-color: var(--background-dark);
+    background-color: var.$background-dark;
     color: white;
     padding: 22px 25px 22px 25px;
     gap: 16px;
 }
 
 .footer__title {
-    font-family: var(--font-secondary);
+    font-family: var.$font-secondary;
     font-size: 18px;
     font-weight: 400;
     font-style: italic;

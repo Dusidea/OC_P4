@@ -1,0 +1,5 @@
+@use '//SASS/Utils/variables' as var;
+
+.test {
+    color: var.$button-purple;
+}

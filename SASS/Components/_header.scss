@@ -1,3 +1,5 @@
+@use '../Utils/variables' as var;
+
 .header-main {
     display: flex;
     flex-direction: row;
@@ -42,7 +44,7 @@
 .header__title{
     font-size: 30px ;
     font-weight: 400;
-    font-family: var(--font-secondary);
+    font-family: var.$font-secondary;
     box-shadow: 0px 2px 4px 0px #00000026;
     width: 100%;
     display: flex;
