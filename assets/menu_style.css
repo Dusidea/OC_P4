@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5 {
 
 
 /******************** HEADER**********************/
-header {
+.header-menu {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -137,22 +137,6 @@ nav a {
 
 
 
-
-/* MODIFIEUR */
-/* .main__frame-no_overlap{ */
-    /* début répétition à retirer en css */
-    /* display: flex;
-    flex-direction: column;
-    background-color: var(--background-light) ;
-    gap: 40px;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-    padding-left: 17px;
-    padding-right: 17px; */
-    /* fin répétition à retirer en css */
-    /* margin-top:0; */
-/* } */
-
 .main__frame__title {
     display: flex;
     align-items: center;
@@ -212,6 +196,8 @@ nav a {
     box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1);
     position: relative;
     justify-content: space-between;
+    overflow: hidden;
+    /* text-overflow: ellipsis; */
     /* animation : appear 3000ms ease-in-out; */
 
     /* for {}
@@ -221,15 +207,14 @@ nav a {
 }
 
 
-
 .main__frame__section__card__txt {
     display: flex;
     flex-direction: column;
     gap: 5px;
     text-overflow: ellipsis;
-    /* text-wrap: nowrap; */
-
-
+    white-space: nowrap;
+    overflow: hidden; 
+    width: calc(100% - 120px); /*permet d'ajuster la largeur pour que l'elipse du texte se déclenche*/
 }
 
 .main__frame__section__card__dish {
@@ -248,11 +233,12 @@ nav a {
     font-weight: 700;
     font-size: 15px;
     display: flex;
-    /* align-items: center; */
     align-items: flex-end;
     justify-content: space-between;
     text-wrap: nowrap;
-   
+
+    transition: transform 300ms ease-in-out;
+
 }
 
 /* Div de la coche animée lors du survol (ou sélection) du plat */
@@ -268,16 +254,20 @@ nav a {
     position: absolute;
     padding: 20px;
     /* permet de positionner le bloc animé à droite de la carte en dépit du display de la div */
-    right: 0px;
-    top: 0px;
-    /* rend le bloc invisible hors animation */
-    opacity: 0;
+    right: 0;
+    top: 0;
+    /* rend le bloc invisible hors animation sauf si overflow hidden, là pas nécessaire */
+    /* opacity: 0; */
     /* modifie le point d'ancrage pour l'animation (agrandissement) parte de la droite vers la gauche */
-    transform-origin: 100% 50%;
-
-    transform: scaleX(0); /* Taille initiale */
+    /* transform-origin: 100% 50%; */
+    /* transform: scaleX(0);  */
+    /* Taille initiale */
             /********* version transition*********/
-            /* transition: transform 0.5s ease;  */
+            /* placement initial hors de la card*/
+            transform: translateX(100%); 
+            /* transition  */
+            transition: transform 0.3s ease-in-out; 
+            
 }
 
 /* icone check au sein de la div sélection du plat */
@@ -295,22 +285,28 @@ nav a {
 
 .main__frame__section__card:hover .main__frame__section__card__price {
     /* permet de le décalage du texte de la card, surtout le prix ,lors du survol */
-    animation :  slide-price 500ms ease-in-out both;
+    transform: translate(-60px);
+   
+         /********* version animation*********/
+        /* animation :  slide-price 500ms ease-in-out both; */
+        /*pour avoir l'animation retour j'ai choisi une transition classique */
 }
 
 
 .main__frame__section__card:hover .main__frame__section__card-selected{
-     animation: grow 500ms ease-in-out both  ;
-     /* nom - durée - timing  - fillmode(prolongation avant apres) */
-            /********* version transition*********/
-            /* transform: scale(1);
-            opacity: 1;  */ 
+    /********* version transition*********/
+    /* transform: scale(1); */
+    /* translate :(-60px);
+    opacity: 1;   */
+    
+    /* remet le bloc au sein de la carte depuis son emplacement à droite */
+    transform: translateX(0);
+
+        /********* version animation*********/ 
+        /* animation: slide-select 500ms ease-in-out both  ; */
+        /* nom - durée - timing  - fillmode(prolongation avant apres) */
     }
 
-/* .main__frame__section__card:not(:hover) .main__frame__section__card-selected{
-    animation: grow 500ms ease-in-out both;
-    animation-direction: reverse;
-} */
 
 .main__frame__order{
     display: flex;
@@ -340,33 +336,33 @@ nav a {
     }
 }
 
-/* @keyframes slide {
-    from{
-        transform: translateX(0);
-        opacity: 0;
-    }
-    to{
-        transform: translateX(-50px);
-        opacity: 1;  
-    }
-} */
 
+/* 
+La keyframe est très simple et il me faut l'animation retour => je choisis plutot une transition
 @keyframes slide-price {
     to {
         transform: translate(-60px);
     }
-}
+} 
+    */
 
-@keyframes grow {
-    from{
+/* @keyframes slide-select {
+    0%{
         transform: scaleX(0);
+         translate: 0; 
         opacity: 0;
     }
-    to{
+    50%{
+         translate: -30px; 
+        opacity: 0.5;
+    }
+
+    100%{
         transform: scaleX(1);
+         translate: -60px; 
         opacity: 1;  
     }
-}
+} */
 
 /******************** FOOTER**********************/
 
@@ -386,7 +382,6 @@ footer {
     font-weight: 400;
     font-style: italic;
     margin: 0;
-    /* bizarre on dirait qu'il pixelise */
 }
 
 .footer__section {
@@ -401,7 +396,12 @@ footer {
     color: white;
     font-size: 16px;
     font-weight: 500;
-    /* text-decoration: none; */
+}
+
+.footer__section__link-light{
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .footer__section__link .fa-solid {
@@ -469,7 +469,6 @@ footer {
     }
 
 
-   
 }
 
 

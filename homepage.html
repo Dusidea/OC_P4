@@ -11,15 +11,16 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
             integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
             crossorigin="anonymous" referrerpolicy="no-referrer">
-        <link rel="stylesheet" href="./assets/homepage_style.css">
+        <!-- <link rel="stylesheet" href="./assets/homepage_style.css"> -->
+        <link rel="stylesheet" href="public/main.css">
     </head>
     <body>
         <!-- LOADER -->
-        <div class="loader"><i class="fa-solid fa-utensils loader_icon"></i></div>
+        <div class="loader"><i class="fa-solid fa-utensils loader__icon"></i></div>
         <!-- **** -->
         <div class="main-container">            
-            <header class="header-homepage"> 
-                <h1 class="header__title-homepage">ohmyfood</h1>
+            <header class="header-main header-homepage"> 
+                <h1 class="header__title">ohmyfood</h1>
                 <div class="header__location">
                     <i class="fa-solid fa-location-dot"></i>
                     Paris, Belleville
@@ -58,7 +59,7 @@
                     <section class="main__frame__restaurants" id="restaurants-list">
                         <h2 class="main__frame__restaurants__title">Restaurants</h2>
                         <div class="main__frame__restaurants__list">                            
-                            <div class="main__frame__restaurants__list_wrapper">
+                            <div class="main__frame__restaurants__list__wrapper">
                                 <!-- Carte 1 début -->
                                 <a class="main__frame__restaurants__card" href="menupage_palette.html">
                                     <p class="main__frame__restaurants__card__new">Nouveau</p>
@@ -75,10 +76,10 @@
                                     <input type="checkbox" class="main__frame__restaurants__like">
                                     <i class="fa-solid fa-heart restaurant_like-selected"></i> 
                                 </div>
-                            </div>                 
-                            <div class="main__frame__restaurants__list_wrapper">
-                            <!-- Carte 1 fin -->
-                            <!-- Carte 2 début -->
+                            </div>       
+                            <!-- Carte 1 fin -->          
+                            <div class="main__frame__restaurants__list__wrapper">
+                                <!-- Carte 2 début -->
                                 <a class="main__frame__restaurants__card" href="menupage_note.html">
                                     <p class="main__frame__restaurants__card__new">Nouveau</p>
                                     <img class="main__frame__restaurants__card__img" 
@@ -98,8 +99,8 @@
                              </div>
                             <!-- Carte 2 fin -->
                             <!-- Carte 3 début -->
-                            <div class="main__frame__restaurants__list_wrapper">
-                            <!-- <a class="main__frame__restaurants__card__new">Nouveau</a>    -->
+                            <div class="main__frame__restaurants__list__wrapper">
+                                <!-- <a class="main__frame__restaurants__card__new">Nouveau</a>    -->
                                 <a class="main__frame__restaurants__card" href="menupage_alafrancaise.html">
                                     <img class="main__frame__restaurants__card__img" 
                                     src="/assets/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" 
@@ -118,8 +119,8 @@
                             </div>
                             <!-- Carte 3 fin -->
                              <!-- Carte 4 début -->
-                             <div class="main__frame__restaurants__list_wrapper">
-                            <!-- <a class="main__frame__restaurants__card__new">Nouveau</a>    -->
+                            <div class="main__frame__restaurants__list__wrapper">
+                                <!-- <a class="main__frame__restaurants__card__new">Nouveau</a>    -->
                                 <a class="main__frame__restaurants__card" href="menupage_delice.html">
                                     <img class="main__frame__restaurants__card__img" 
                                     src="/assets/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" 
