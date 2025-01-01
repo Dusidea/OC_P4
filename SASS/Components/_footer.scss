@@ -9,6 +9,11 @@ footer {
     color: white;
     padding: 22px 25px 22px 25px;
     gap: 16px;
+
+    @media (min-width: 1024px) {
+        flex-direction: row-reverse;
+        padding: 30px 25px 30px 25px;    
+    }
 }
 
 .footer__title {
@@ -27,6 +32,10 @@ footer {
     font-weight: 500;
     gap: 7px;
 
+    @media (min-width: 1024px) {
+        flex-direction: row;       
+    }
+
 }
 
 .footer__section__link {
@@ -35,6 +44,10 @@ footer {
     font-weight: 500;
     display: flex;
     align-items: center;
+
+    @media (min-width: 1024px) {
+        width: 190px;
+    }
   
 }
 
@@ -44,6 +57,10 @@ footer {
     font-weight: 400;
     display: flex;
     align-items: center;
+
+    @media (min-width: 1024px) {
+        width: 130px;
+    }
 }
 
 .footer__section__link_icon{

@@ -1,6 +1,8 @@
-@mixin desktop {
-    @media screen and (min-width: map-get($breakpoints, desktop)) {
-      @content;
-    }
-  }
+@use './maps';
+@use 'sass:map'; // Import du module map pour utiliser map.get()
 
+@mixin desktop {
+  @media screen and (min-width: map.get(maps.$breakpoints, desktop)) {
+    @content;
+  }
+}
