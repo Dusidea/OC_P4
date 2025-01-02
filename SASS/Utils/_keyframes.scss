@@ -1,3 +1,5 @@
+
+//************* HOMEPAGE : LOADER******************
 @keyframes fadeout{
   0% {
     opacity: 1;
@@ -20,7 +22,20 @@
     }
 }
 
-// Selection des plats version animation (non utilisée)
+
+//************* PAGE MENU : APPARITION DES PLATS******************
+@keyframes appear {
+  from{
+      transform: translateX(-600px);
+      opacity: 0%;
+  }
+  to{
+      transform: translateX(0);
+      opacity: 100%;
+  }
+}
+
+//************* PAGE MENU : Selection des plats version animation (non utilisée)******
 /* @keyframes slide-select {
     0%{
         transform: scaleX(0);
@@ -38,3 +53,4 @@
         opacity: 1;  
     }
 } */
+

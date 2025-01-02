@@ -28,6 +28,8 @@
 }
 
 
+// ************LOADER DE LA HOMEPAGE****************
+
 .loader {
     position: fixed;
     top: 0;
@@ -74,19 +76,15 @@
 
 /******************** MAIN**********************/
 
-
-/* MODIFIEUR */
 .main__frame {
-    /* début répétition à retirer en css */
     display: flex;
     flex-direction: column;
     background-color: var.$background-light ;
     gap: 40px;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;  
-    /* fin répétition à retirer en css */
-   max-width: 100%;
-
+    max-width: 100%;
+    
    &__title {
     display: flex;
     flex-direction: column;
@@ -95,6 +93,7 @@
     text-wrap: wrap;
     margin-top: 39px; 
     flex-wrap: wrap;  
+    padding: 15px;
 
         &__name{
             font-size: 24px;
@@ -105,7 +104,18 @@
             padding-left: 42px;
             padding-right: 42px;
             height: auto;
+
+            @include mixins.desktop {
+                font-size: 40px;
+                margin: 0;
+            }
+
         }
+
+        @include mixins.desktop {
+            gap : 25px;
+            // margin: 0;
+        } 
 
     }
 
@@ -116,6 +126,10 @@
         font-weight: 300;
         text-wrap: wrap;
         text-align: center;
+
+        @include mixins.desktop {
+            margin: 0;
+        }
     }
     
 }
@@ -330,6 +344,8 @@
  
 }
 
+// **************Like des restaurants********************
+
 .main__frame__restaurants__list_like{
     display: flex;
     flex-direction: column;
@@ -337,7 +353,6 @@
     top: 200px;
     right: 25px;
     z-index: 4;
-
 }
 
 .restaurant_like{
@@ -345,8 +360,10 @@
     font-size: 22px;  
     margin: 0;
     padding: 0;
+    // font-weight:100px;
+    opacity: 0.7;
+    // filter: brightness(120%) saturate(90%);
 }
-
 
 .restaurant_like-selected{
     display: flex;
