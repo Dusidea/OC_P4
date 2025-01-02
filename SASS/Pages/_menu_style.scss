@@ -13,8 +13,6 @@
 // idem à homepage
 
 
-
-
 .main-container__image{
     height: 275px;
     object-fit: cover;
@@ -37,11 +35,10 @@
 }
 
 
-
 /******************** MAIN**********************/
 
 
-// Attention variante pour chevauchement image
+// Variante de main__frame pour chevauchement image
 .main__frame-menu{
     margin-top: -55px;
     padding-left: 17px;
@@ -72,12 +69,11 @@
 
 }
 
-
-
 .main__frame__title .fa-heart {
     font-size: 22px;
 }
 
+// *************SECTION*****************
 .main__frame__section {
     display: flex;
     flex-direction: column;
@@ -86,156 +82,141 @@
     @include mixins.desktop {
         width: 100%;
     }
-}
 
-.main__frame__section__title {
-    font-weight: 300;
-    font-size: 16px;
-    margin: 0;
-    position: relative;
-}
-
-.main__frame__section__title__line {
-    width: 40px;
-    border-bottom: 3px solid;
-    border-bottom-color: var.$light-green;
-}
-
-.main__frame__section__card {
-    display: flex;
-    padding: 15px;
-    gap: 5px;
-    background-color: white;
-    border-radius: 15.04px;
-    box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1);
-    position: relative;
-    justify-content: space-between;
-    overflow: hidden;
-    /* text-overflow: ellipsis; */
-    /* animation : appear 3000ms ease-in-out; */
-
-    /* for {}
-
-    } */
-
-}
-
-
-.main__frame__section__card__txt {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden; 
-    width: calc(100% - 120px); /*permet d'ajuster la largeur pour que l'elipse du texte se déclenche*/
-}
-
-.main__frame__section__card__dish {
-    margin: 0;
-    font-size: 18px;
-    font-weight: 500;
-}
-
-.main__frame__section__card__description {
-    margin: 0;
-    font-weight: 300;
-    font-size: 15.04px;
-}
-
-.main__frame__section__card__price {
-    font-weight: 700;
-    font-size: 15px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    text-wrap: nowrap;
-
-    transition: transform 300ms ease-in-out;
-}
-
-/* Div de la coche animée lors du survol (ou sélection) du plat */
-.main__frame__section__card-selected {
-    display: flex;
-    background-color: var.$light-green;
-    height: 100%;
-    width: 60px;
-    justify-content: center;
-    align-items: center;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    position: absolute;
-    padding: 20px;
-    /* permet de positionner le bloc animé à droite de la carte en dépit du display de la div */
-    right: 0;
-    top: 0;
-    /* rend le bloc invisible hors animation sauf si overflow hidden, là pas nécessaire */
-    /* opacity: 0; */
-    /* modifie le point d'ancrage pour l'animation (agrandissement) parte de la droite vers la gauche */
-    /* transform-origin: 100% 50%; */
-    /* transform: scaleX(0);  */
-    /* Taille initiale */
-            /********* version transition*********/
-            /* placement initial hors de la card*/
-            transform: translateX(100%); 
-            /* transition  */
-            transition: transform 0.3s ease-in-out; 
-            
-}
-
-/* icone check au sein de la div sélection du plat */
-.dishcheck{
-    font-size: 20px;
-    /* font-weight: 1000; */
-    /* font-weight: bold; */
-    color:  white; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-}
-
-.main__frame__section__card:hover .main__frame__section__card__price {
-    /* permet de le décalage du texte de la card, surtout le prix ,lors du survol */
-    transform: translate(-60px);
-   
-         /********* version animation*********/
-        /* animation :  slide-price 500ms ease-in-out both; */
-        /*pour avoir l'animation retour j'ai choisi une transition classique */
-}
-
-
-.main__frame__section__card:hover .main__frame__section__card-selected{
-    /********* version transition*********/
-    /* transform: scale(1); */
-    /* translate :(-60px);
-    opacity: 1;   */
+    &__title {
+        font-weight: 300;
+        font-size: 16px;
+        margin: 0;
+        position: relative;
     
-    /* remet le bloc au sein de la carte depuis son emplacement à droite */
-    transform: translateX(0);
-
-        /********* version animation*********/ 
-        /* animation: slide-select 500ms ease-in-out both  ; */
-        /* nom - durée - timing  - fillmode(prolongation avant apres) */
+        &__line {
+            width: 40px;
+            border-bottom: 3px solid;
+            border-bottom-color: var.$light-green;
+        }
     }
 
+    &__card {
+        display: flex;
+        padding: 15px;
+        gap: 5px;
+        background-color: white;
+        border-radius: 15.04px;
+        box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1);
+        position: relative;
+        justify-content: space-between;
+        overflow: hidden;
+        /* text-overflow: ellipsis; */
+        /* animation : appear 3000ms ease-in-out; */
+        /* for {}
+        } */
+    
+        &__txt {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden; 
+            width: calc(100% - 120px); /*permet d'ajuster la largeur pour que l'elipse du texte se déclenche*/
+        }
+    
+        &__dish {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 500;
+        }
+    
+        &__description {
+            margin: 0;
+            font-weight: 300;
+            font-size: 15.04px;
+        }
+    
+        &__price {
+            font-weight: 700;
+            font-size: 15px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            text-wrap: nowrap;
+        
+            transition: transform 300ms ease-in-out;
+        }
+    
+        /* Coche animée lors du survol (ou sélection) du plat */
+        .main__frame__section__card-selected {
+            display: flex;
+            background-color: var.$light-green;
+            height: 100%;
+            width: 60px;
+            justify-content: center;
+            align-items: center;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            position: absolute;
+            padding: 20px;
+            /* permet de positionner le bloc animé à droite de la carte en dépit du display de la div */
+            right: 0;
+            top: 0;
+            /* rend le bloc invisible hors animation sauf si overflow hidden, là pas nécessaire */
+            /* opacity: 0; */
+
+            /* modifie le point d'ancrage pour l'animation (agrandissement) parte de la droite vers la gauche */
+            /* transform-origin: 100% 50%; */
+
+            /* Taille initiale */
+            /* transform: scaleX(0);  */
+            
+                    /********* version transition*********/
+                    /* placement initial hors de la card*/
+                    transform: translateX(100%); 
+                    /* transition  */
+                    transition: transform 0.3s ease-in-out; 
+                    
+        }
+    
+        /* icone check au sein de la div sélection du plat */
+        .dishcheck{
+            font-size: 20px;
+            color:  white; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        
+        &:hover &__price {
+            /* permet de le décalage du texte de la card, surtout le prix ,lors du survol */
+            transform: translate(-60px);
+           
+                 /********* version animation*********/
+                /* animation :  slide-price 500ms ease-in-out both; */
+                /*pour avoir l'animation retour j'ai choisi une transition classique */
+        }
+        
+        &:hover .main__frame__section__card-selected{
+            /********* version transition*********/
+            /* transform: scale(1); */
+            /* translate :(-60px);
+            opacity: 1;   */
+            
+        /* remet le bloc au sein de la carte depuis son emplacement à droite */
+        transform: translateX(0);
+        
+            /********* version animation*********/ 
+            /* animation: slide-select 500ms ease-in-out both  ; */
+            /* nom - durée - timing  - fillmode(prolongation avant apres) */
+        }
+       
+    }
+
+}
 
 .main__frame__order{
     display: flex;
     justify-content: center;
-}
-
-.main__frame__order__button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 25px;
-    color: white;
-    background: linear-gradient(var.$button-purple, #FF79DA);
-    height: 50px;
-    width: 186px;
-    
 }
 
 @keyframes appear {
@@ -248,31 +229,3 @@
         opacity: 100%;
     }
 }
-
-
-/* 
-La keyframe est très simple et il me faut l'animation retour => je choisis plutot une transition
-@keyframes slide-price {
-    to {
-        transform: translate(-60px);
-    }
-} 
-    */
-
-/* @keyframes slide-select {
-    0%{
-        transform: scaleX(0);
-         translate: 0; 
-        opacity: 0;
-    }
-    50%{
-         translate: -30px; 
-        opacity: 0.5;
-    }
-
-    100%{
-        transform: scaleX(1);
-         translate: -60px; 
-        opacity: 1;  
-    }
-} */

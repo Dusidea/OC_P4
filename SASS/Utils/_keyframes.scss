@@ -19,3 +19,22 @@
       transform: rotate(360deg);
     }
 }
+
+// Selection des plats version animation (non utilisée)
+/* @keyframes slide-select {
+    0%{
+        transform: scaleX(0);
+         translate: 0; 
+        opacity: 0;
+    }
+    50%{
+         translate: -30px; 
+        opacity: 0.5;
+    }
+
+    100%{
+        transform: scaleX(1);
+         translate: -60px; 
+        opacity: 1;  
+    }
+} */
