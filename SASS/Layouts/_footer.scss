@@ -1,5 +1,7 @@
 
 @use '../Utils/variables' as var;
+@use '../Utils/maps'as maps;
+@use '../Utils/mixins';
 
 footer {
     display: flex;
@@ -10,9 +12,10 @@ footer {
     padding: 22px 25px 22px 25px;
     gap: 16px;
 
-    @media (min-width: 1024px) {
+    @include mixins.desktop {
         flex-direction: row-reverse;
-        padding: 30px 25px 30px 25px;    
+        padding: 30px 25px 30px 25px;   
+        width: 100%; 
     }
 }
 
@@ -22,7 +25,6 @@ footer {
     font-weight: 400;
     font-style: italic;
     margin: 0;
-    /* bizarre on dirait qu'il pixelise */
 }
 
 .footer__section {
@@ -32,7 +34,7 @@ footer {
     font-weight: 500;
     gap: 7px;
 
-    @media (min-width: 1024px) {
+    @include mixins.desktop {
         flex-direction: row;       
     }
 
@@ -45,7 +47,7 @@ footer {
     display: flex;
     align-items: center;
 
-    @media (min-width: 1024px) {
+    @include mixins.desktop {
         width: 190px;
     }
   
@@ -58,7 +60,7 @@ footer {
     display: flex;
     align-items: center;
 
-    @media (min-width: 1024px) {
+    @include mixins.desktop {
         width: 130px;
     }
 }

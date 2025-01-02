@@ -4,6 +4,7 @@
 @use './Utils/mixins';
 @use './Base/reset';
 @use './Base/typography';
-@use './Components/header';
-@use './Components/footer';
-@use './Layouts/homepage_style';
+@use './Layouts/header';
+@use './Layouts/footer';
+@use './Pages/homepage_style';
+@use './Pages/menu_style';
