@@ -3,9 +3,15 @@
 @keyframes fadeout{
   0% {
     opacity: 1;
+    display: flex;
+    visibility: visible;
+    pointer-events: auto;
   }
   50% {
     opacity: 0.5;
+    display: flex;
+    visibility: visible;
+    pointer-events: auto;
   }
   100% {
     opacity: 0;
@@ -15,6 +21,9 @@
     // Moindre charge CPU : Aucune mise à jour visuelle n’est nécessaire.
     // Ressources associées : Les styles SCSS/CSS, le code HTML, et les références dans le DOM sont encore là. Cela ne devient "gratuit" qu'après une suppression réelle du DOM (via JavaScript).
     display: none;
+    // Pour firefox, display none ne suffit pas, j'ajoute donc les propriétés visibility et pointer-events
+    visibility: hidden;
+    pointer-events: none; 
   }
 }
 

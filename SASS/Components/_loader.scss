@@ -18,7 +18,8 @@
     z-index: 9999;
     animation: fadeout 4000ms ease-out forwards;
     opacity: 0;
-    // visibility: visible;
+    pointer-events: none; // Désactivation au départ par sécurité
+  visibility: visible;  // Permet de corriger l'affichage dans Firefox
 
     &__icon{
         color: var.$button-purple;
