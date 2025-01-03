@@ -6,7 +6,9 @@
 @use './Base/typography';
 @use './Layouts/header';
 @use './Layouts/footer';
-@use './Pages/homepage_style';
-@use './Pages/menu_style';
+@use './Pages/page_style';
 @use './Components/buttons';
 @use './Components/restaurantlike';
+@use './Components/loader';
+@use './Components/restaurantcard';
+@use './Components/restaurantsection';
