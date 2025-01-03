@@ -1,0 +1,475 @@
+/* Rappel BEM .bloc__element--modificateur (où modificateur est par exemple : is open) */
+
+/****** General ***********/
+
+
+/* * {
+   border: 1px solid red; 
+}  */
+
+:root {
+    /* envisager de renommer les couleurs par usage, mais pour l'instant je ne vois pas les usages */
+    --button-purple :  #9356DC;
+    --light-green : #99E2D0;
+    --dark-green: #008766;
+    --light-blue: #89C8FA;
+    --dark-blue :  #003A68;
+    --background-light : #F6F6F6;
+    --font-main : 'Roboto', sans-serif;
+    --font-secondary : "Shrikhand", serif;
+    --background-dark : #353535 ;
+}
+
+* {
+    font-family: var(--font-main);
+    box-sizing: border-box;
+}
+
+/* .fa-solid, .fa-regular {
+   
+} */
+
+a {
+    text-decoration: none;
+    color:black;
+}
+
+body {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 0;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    
+}
+
+
+/******************** HEADER**********************/
+.header-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* MODIFIEUR */
+/* .header-homepage {
+    display: flex;
+    flex-direction: column;
+} */
+
+.header__title-menupage{
+    font-size: 30px ;
+    font-weight: 400;
+    font-family: var(--font-secondary);
+    margin: 0;
+    /* margin-top : 14px; */
+    /* margin-left: 42px; */
+}
+
+
+nav {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left : 42px;
+    font-size: 20px;
+}
+
+nav a {
+    /* display: flex; */
+    /* max-width: 100%; */
+  
+}
+
+/* nav i {
+
+    width: 17px;
+    height: 16px;
+} */
+
+.header__location {
+    background-color: #EAEAEA;
+}
+
+.main-container__image{
+    height: 275px;
+    object-fit: cover;
+    width: 100%;
+}
+
+
+/******************** FRAMEANDFOOTER (wrapper)**********************/
+.frameandfooter {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    background-color: var(--background-light) ;
+
+    max-width: 100%;  
+
+}
+
+
+/******************** MAIN**********************/
+.main__frame{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-light) ;
+    gap: 40px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    margin-top: -55px;
+    padding-left: 17px;
+    padding-right: 17px;
+    padding-top: 31px;
+    
+}
+
+
+
+.main__frame__title {
+    display: flex;
+    align-items: center;
+   
+}
+
+/* MODIFIEUR */
+/* .main__frame__title__name-home{
+    font-size: 24px;
+    font-weight: 700;
+} */
+
+.main__frame__title__name--menu{
+    font-family: var(--font-secondary);
+    font-size: 28px;
+    font-weight: 400;
+    margin-right: 29px;
+}
+
+.main__frame__subtitle{
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.main__frame__title .fa-heart {
+    font-size: 22px;
+    /* position:   absolute;
+    right: 37px; */
+    /* padding-left: 10px; */
+}
+
+.main__frame__section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.main__frame__section__title {
+    font-weight: 300;
+    font-size: 16px;
+    margin: 0;
+    position: relative;
+}
+
+.main__frame__section__title__line {
+    width: 40px;
+    border-bottom: 3px solid;
+    border-bottom-color: var(--light-green);
+}
+
+.main__frame__section__card {
+    display: flex;
+    padding: 15px;
+    gap: 5px;
+    background-color: white;
+    border-radius: 15.04px;
+    box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1);
+    position: relative;
+    justify-content: space-between;
+    overflow: hidden;
+    /* text-overflow: ellipsis; */
+    /* animation : appear 3000ms ease-in-out; */
+
+    /* for {}
+
+    } */
+
+}
+
+
+.main__frame__section__card__txt {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; 
+    width: calc(100% - 120px); /*permet d'ajuster la largeur pour que l'elipse du texte se déclenche*/
+}
+
+.main__frame__section__card__dish {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.main__frame__section__card__description {
+    margin: 0;
+    font-weight: 300;
+    font-size: 15.04px;
+}
+
+.main__frame__section__card__price {
+    font-weight: 700;
+    font-size: 15px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    text-wrap: nowrap;
+
+    transition: transform 300ms ease-in-out;
+
+}
+
+/* Div de la coche animée lors du survol (ou sélection) du plat */
+.main__frame__section__card-selected {
+    display: flex;
+    background-color: var(--light-green);
+    height: 100%;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    position: absolute;
+    padding: 20px;
+    /* permet de positionner le bloc animé à droite de la carte en dépit du display de la div */
+    right: 0;
+    top: 0;
+    /* rend le bloc invisible hors animation sauf si overflow hidden, là pas nécessaire */
+    /* opacity: 0; */
+    /* modifie le point d'ancrage pour l'animation (agrandissement) parte de la droite vers la gauche */
+    /* transform-origin: 100% 50%; */
+    /* transform: scaleX(0);  */
+    /* Taille initiale */
+            /********* version transition*********/
+            /* placement initial hors de la card*/
+            transform: translateX(100%); 
+            /* transition  */
+            transition: transform 0.3s ease-in-out; 
+            
+}
+
+/* icone check au sein de la div sélection du plat */
+.dishcheck{
+    font-size: 20px;
+    /* font-weight: 1000; */
+    /* font-weight: bold; */
+    color:  white; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.main__frame__section__card:hover .main__frame__section__card__price {
+    /* permet de le décalage du texte de la card, surtout le prix ,lors du survol */
+    transform: translate(-60px);
+   
+         /********* version animation*********/
+        /* animation :  slide-price 500ms ease-in-out both; */
+        /*pour avoir l'animation retour j'ai choisi une transition classique */
+}
+
+
+.main__frame__section__card:hover .main__frame__section__card-selected{
+    /********* version transition*********/
+    /* transform: scale(1); */
+    /* translate :(-60px);
+    opacity: 1;   */
+    
+    /* remet le bloc au sein de la carte depuis son emplacement à droite */
+    transform: translateX(0);
+
+        /********* version animation*********/ 
+        /* animation: slide-select 500ms ease-in-out both  ; */
+        /* nom - durée - timing  - fillmode(prolongation avant apres) */
+    }
+
+
+.main__frame__order{
+    display: flex;
+    justify-content: center;
+}
+
+.main__frame__order__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    color: white;
+    background: linear-gradient(var(--button-purple), #FF79DA);
+    height: 50px;
+    width: 186px;
+    
+}
+
+@keyframes appear {
+    from{
+        transform: translateX(-600px);
+        opacity: 0%;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 100%;
+    }
+}
+
+
+/* 
+La keyframe est très simple et il me faut l'animation retour => je choisis plutot une transition
+@keyframes slide-price {
+    to {
+        transform: translate(-60px);
+    }
+} 
+    */
+
+/* @keyframes slide-select {
+    0%{
+        transform: scaleX(0);
+         translate: 0; 
+        opacity: 0;
+    }
+    50%{
+         translate: -30px; 
+        opacity: 0.5;
+    }
+
+    100%{
+        transform: scaleX(1);
+         translate: -60px; 
+        opacity: 1;  
+    }
+} */
+
+/******************** FOOTER**********************/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    /* margin-top: 40px; */
+    background-color: var(--background-dark);
+    color: white;
+    padding: 22px 25px 22px 25px;
+    gap: 16px;
+}
+
+.footer__title {
+    font-family: var(--font-secondary);
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0;
+}
+
+.footer__section {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 500;
+    gap: 7px;
+}
+
+.footer__section__link {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.footer__section__link-light{
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.footer__section__link .fa-solid {
+    width: 11px;
+    height: 13px;
+    margin-right: 11px;
+}
+
+/* Le code ci-dessous correspond à la version responsive uniquement => desktop*/
+
+/****** Media queries ***********/
+/* > Small devices (phones, less than 768px) */
+@media (min-width: 769px) {
+    /* ... */
+  
+   
+}
+
+/* Medium devices (tablets, less/equal than 1024px) */
+@media (min-width: 1024px) {
+
+    .frameandfooter {
+        /* justify-content: center; */
+        align-items: center;
+        background-color: white;
+        gap : 0;
+    }
+
+    .main-container__image{
+        height: 383px;      
+    }
+
+    .main__frame{
+        margin-top: -40px;
+        width: 1055px;
+        height: 1255px;
+       align-items: center;
+       padding-left: 200px;
+       padding-right: 200px;
+    }
+
+    .main__frame__section {
+        width: 100%;
+    }
+
+    footer{
+        flex-direction: row-reverse;
+        padding: 30px 25px 30px 25px;    
+    }
+
+    .footer__section{
+        flex-direction: row;       
+    }
+
+    .footer__section_first {
+        flex-direction: row;       
+    }
+
+    .footer__section__link { 
+        width: 190px;
+    }
+
+    .footer__section__link-light{
+        width: 130px;
+    }
+
+
+}
+
+
+
