@@ -3,7 +3,6 @@
 @keyframes fadeout{
   0% {
     opacity: 1;
-    /* transform: scale(1); */
     visibility: visible;
   }
   50% {
@@ -12,6 +11,8 @@
   }
   100% {
     opacity: 0;
+    // même si opacité 0, l'objet prend toujours toute la page et on ne peut interagir avec aucun élélement donc j'ai choisi cette propriété.
+    //  On aurait pu imaginer changer le z-index aussi
     visibility: hidden
   }
 }
@@ -34,23 +35,3 @@
       opacity: 100%;
   }
 }
-
-//************* PAGE MENU : Selection des plats version animation (non utilisée)******
-/* @keyframes slide-select {
-    0%{
-        transform: scaleX(0);
-         translate: 0; 
-        opacity: 0;
-    }
-    50%{
-         translate: -30px; 
-        opacity: 0.5;
-    }
-
-    100%{
-        transform: scaleX(1);
-         translate: -60px; 
-        opacity: 1;  
-    }
-} */
-
