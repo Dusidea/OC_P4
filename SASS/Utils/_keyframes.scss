@@ -13,7 +13,7 @@
     opacity: 0;
     // même si opacité 0, l'objet prend toujours toute la page et on ne peut interagir avec aucun élélement donc j'ai choisi cette propriété.
     //  On aurait pu imaginer changer le z-index aussi
-    visibility: hidden
+    visibility: hidden;
   }
 }
 
