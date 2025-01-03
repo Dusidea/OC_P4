@@ -18,7 +18,7 @@
     z-index: 9999;
     animation: fadeout 4000ms ease-out forwards;
     opacity: 0;
-    visibility: visible;
+    // visibility: visible;
 
     &__icon{
         color: var.$button-purple;

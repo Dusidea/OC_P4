@@ -3,17 +3,18 @@
 @keyframes fadeout{
   0% {
     opacity: 1;
-    visibility: visible;
   }
   50% {
     opacity: 0.5;
-    visibility: visible;
   }
   100% {
     opacity: 0;
-    // même si opacité 0, l'objet prend toujours toute la page et on ne peut interagir avec aucun élélement donc j'ai choisi cette propriété.
-    //  On aurait pu imaginer changer le z-index aussi
-    visibility: hidden;
+    // même si opacité 0, l'objet prend toujours toute la page et tourne en continu 
+    // display none simule la disparition du bloc (fin de la ressource chargement aussi ?)
+    // Plus de rendu graphique : Les ressources GPU ne sont plus utilisées pour dessiner le loader (ce qui est significatif pour des animations).
+    // Moindre charge CPU : Aucune mise à jour visuelle n’est nécessaire.
+    // Ressources associées : Les styles SCSS/CSS, le code HTML, et les références dans le DOM sont encore là. Cela ne devient "gratuit" qu'après une suppression réelle du DOM (via JavaScript).
+    display: none;
   }
 }
 
