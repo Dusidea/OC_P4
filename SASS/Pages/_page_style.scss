@@ -16,6 +16,15 @@
     
 }
 
+.main-container__image{
+    height: 275px;
+    object-fit: cover;
+    width: 100%;
+
+    @include mixins.desktop {
+        height: 383px;      
+    }
+}
 
 /******************** FRAMEANDFOOTER (wrapper)**********************/
 .frameandfooter {
@@ -27,52 +36,14 @@
     max-width: 100%;
 }
 
-
-// ************LOADER DE LA HOMEPAGE****************
-
-.loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    animation: fadeout 4000ms ease forwards;
-    opacity: 0;
-    visibility: visible;
-
-    &__icon{
-        color: var.$button-purple;
-        font-size: 50px;
-        animation: spin 1s linear infinite;
-        position: fixed;
-        top: 0;
-        left: 0;
-        display: flex;
+.frameandfooter-menu {
+    @include mixins.desktop {
         align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
+        background-color: white;
+        gap : 0;
     }
   
 }
-
-/* Loader classique cercle */
-/* .loader::after {
-    content: "";
-    width: 50px;
-    height: 50px;
-    border: 5px solid #ccc;
-    border-top-color: var(--button-purple);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-} */
-
-
 
 /******************** MAIN**********************/
 
@@ -132,6 +103,37 @@
         }
     }
     
+}
+
+// Variante de main__frame pour chevauchement image
+.main__frame-menu{
+    margin-top: -55px;
+    padding-left: 17px;
+    padding-right: 17px;
+    padding-top: 31px;
+
+    &__title {
+        display: flex;
+        align-items: center;
+        position: relative;
+    
+        &__name {
+            font-family: var.$font-secondary;
+            font-size: 28px;
+            font-weight: 400;  
+        }
+       
+    }
+
+    @include mixins.desktop {
+        margin-top: -40px;
+        width: 1055px;
+        height: 1255px;
+        align-items: center;
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+
 }
 
 .main__frame__fonctionnement{
@@ -342,4 +344,10 @@
         
     }
  
+}
+
+// Menu page order button
+.main__frame__order{
+    display: flex;
+    justify-content: center;
 }
