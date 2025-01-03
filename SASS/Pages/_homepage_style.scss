@@ -367,7 +367,13 @@
 
 .restaurant_like-selected{
     display: flex;
-    color: var.$button-purple;
+    // linear gradient ne s'applique qu'a des background
+    background: var.$button-gradient;
+    // rend l'icone transparente pour afficher le fond à travers sa forme
+    color: transparent;
+    // découpage selon la forme de l'icone(ici text puisque font icon)
+    background-clip: text;
+    
     font-size: 22px;
     opacity: 0;
     transition: opacity 400ms ease-in-out;
